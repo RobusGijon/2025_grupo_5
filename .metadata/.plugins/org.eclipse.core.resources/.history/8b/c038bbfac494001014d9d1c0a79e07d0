@@ -1,0 +1,23 @@
+package test_vehiculo;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import modeloDatos.Moto;
+
+public class test_AutoABS_Moto {
+
+	private Moto moto;
+	
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
