@@ -90,8 +90,8 @@ public class Test_Mensajes {
         String VIAJE_YA_FINALIZADO = "El viaje ya figura como finalizado";
         
        // Assert.assertEquals(Mensajes.VIAJE_YA_FINALIZADO, VIAJE_YA_FINALIZADO);
-        
         // No esta definido
+        
         Assert.assertTrue(false);
     }
 

@@ -1,0 +1,28 @@
+1759787049482	Delete element
+1759787086833	Move compilation unit
+1759787090282	Move compilation unit
+1759787123532	Rename type 'Test_ChoferABS_ChoferTemporario'
+1759787245806	Move compilation unit
+1759787253205	Move compilation unit
+1759787257344	Move compilation unit
+1759787263698	Delete element
+1759787281746	Rename type 'test_AutoABS_Moto'
+1759787335622	Rename type 'Test_Auto'
+1759787353311	Delete element
+1759790266346	Rename type 'Test_Moto'
+1759790276407	Rename type 'ChoferAbstracto'
+1759790284694	Rename type 'Test_ChoferPermanente'
+1759793839893	Rename field 'PATENTE_TEST'
+1759793873488	Rename field 'pedidoConMascota'
+1759794470225	Rename type 'Test_3_Combi'
+1759802295471	Rename type 'Test_2_Auto'
+1759802302379	Rename type 'Test_2_Combi'
+1759802309144	Rename type 'Test_2_Moto'
+1759802317961	Rename type 'Test_Cliente'
+1759802326070	Rename type 'Test_1_ChoferAbstracto'
+1759802334679	Rename type 'Test_1_ChoferPermanente'
+1759802411099	Rename type 'Test_Chofer_Abstracto'
+1759803614481	Rename local variable 'percPax'
+1759803624612	Rename local variable 'percKm'
+1759804638902	Rename local variable 'pax'
+1759804650060	Rename local variable 'pax'
