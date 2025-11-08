@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;test_controlador.Test_Controlador_login&apos; to &apos;Test_Controlador_persistencia&apos;&#x0A;- Original project: &apos;TEST_tallerProgramacion&apos;&#x0A;- Original element: &apos;test_controlador.Test_Controlador_login&apos;&#x0A;- Renamed element: &apos;test_controlador.Test_Controlador_persistencia&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Test_Controlador_login&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java=/test=/true=/=/optional=/true=/=/maven.pomderived=/true=/&lt;test_controlador{Test_Controlador_login.java[Test_Controlador_login" matchStrategy="1" name="Test_Controlador_persistencia" qualified="false" references="true" similarDeclarations="false" stamp="1762564016627" textual="false" version="1.0"/>
+</session>

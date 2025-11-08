@@ -203,8 +203,7 @@ public class AuxiliarPersistenciaTesting {
                 && viajesTerminadosIguales(dto, emp);
     }
 
-    public static EmpresaDTO empresaToEmpresaDTO() {
-        Empresa empresa = Empresa.getInstance();
+    public static EmpresaDTO empresaToEmpresaDTO(Empresa empresa) {
         EmpresaDTO empresaDTO = new EmpresaDTO();
 
         empresaDTO.setClientes(empresa.getClientes());

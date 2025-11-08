@@ -71,7 +71,7 @@ public class Test_Gui_PanelAdmin_CrearVehiculo {
 
 		this.irAlPanelDelAdministrador();
 	}
-	
+
 
 	@After
 	public void tearDown() {
@@ -90,7 +90,7 @@ public class Test_Gui_PanelAdmin_CrearVehiculo {
 		}
 	}
 
-//	@Test
+	@Test
 	public void test_panelAdministrador_botonNuevoVehiculo_habilitacionMoto() {
 		JTextField campoPatente = (JTextField) TestUtils.getComponentForName(ventana, Constantes.PATENTE);
 		JRadioButton radioMoto = (JRadioButton) TestUtils.getComponentForName(ventana, Constantes.MOTO);
@@ -114,7 +114,7 @@ public class Test_Gui_PanelAdmin_CrearVehiculo {
 		assertTrue(botonAceptar.isEnabled());
 	}
 
-//	@Test
+	@Test
 	public void test_panelAdministrador_botonNuevoVehiculo_habilitacionAuto() {
 		JTextField campoPatente = (JTextField) TestUtils.getComponentForName(ventana, Constantes.PATENTE);
 		JButton botonAceptar = (JButton) TestUtils.getComponentForName(ventana, Constantes.NUEVO_VEHICULO);
@@ -171,7 +171,7 @@ public class Test_Gui_PanelAdmin_CrearVehiculo {
 		assertTrue(botonAceptar.isEnabled());
 	}
 
-//	@Test
+	@Test
 	public void test_panelAdministrador_botonNuevoVehiculo_habilitacionCombi() {
 		JTextField campoPatente = (JTextField) TestUtils.getComponentForName(ventana, Constantes.PATENTE);
 		JButton botonAceptar = (JButton) TestUtils.getComponentForName(ventana, Constantes.NUEVO_VEHICULO);
@@ -271,7 +271,7 @@ public class Test_Gui_PanelAdmin_CrearVehiculo {
 		}
 	}
 
-//	@Test
+	@Test
 	public void test_panelAdministrador_crearCombi_debenEstarAgregadosEnLaLista() {
 
 		JList<Vehiculo> listaVehiculos = (JList<Vehiculo>) TestUtils.getComponentForName(ventana,
@@ -324,7 +324,7 @@ public class Test_Gui_PanelAdmin_CrearVehiculo {
 	}
 
 
-//	@Test
+	@Test
 	public void test_panelAdministrador_crearVehiculoConPatenteRepetida_debeMostrarMensajeError() {
 		String patenteRepetida = "patenteRepetida";
 

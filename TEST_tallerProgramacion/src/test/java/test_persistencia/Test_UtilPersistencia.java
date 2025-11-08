@@ -51,7 +51,7 @@ public class Test_UtilPersistencia {
 	@Test
 	public void test_empresaToEmpresaDTO() {	
 		UtilPersistencia.empresaFromEmpresaDTO(empresaDTO);
-		EmpresaDTO empresaConvertida = AuxiliarPersistenciaTesting.empresaToEmpresaDTO(empresa);
+		EmpresaDTO empresaConvertida = AuxiliarPersistenciaTesting.empresaToEmpresaDTO();
 		assertTrue(AuxiliarPersistenciaTesting.sonIguales(empresaConvertida, empresaDTO));
 	}
 	

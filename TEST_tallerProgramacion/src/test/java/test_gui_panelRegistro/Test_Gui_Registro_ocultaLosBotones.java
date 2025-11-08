@@ -49,8 +49,8 @@ public class Test_Gui_Registro_ocultaLosBotones {
 	    
 	}
 	
-	
-	public void test_botonRegistrarHabilitado() throws InterruptedException {
+	@Test
+	public void test_botonRegistrarHabilitado(){
 		
 		JTextField regNombreUsuario = (JTextField) TestUtils.getComponentForName(ventana, Constantes.REG_USSER_NAME);
 		JTextField regPass = (JTextField) TestUtils.getComponentForName(ventana, Constantes.REG_PASSWORD);

@@ -88,7 +88,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 		}
 	}
 
-	// @Test
+	@Test
 	public void test_panelAdministrador_camposYbotonesChofer_enabledSegunTipoChofer() {
 
 		JTextField campoDNI = (JTextField) TestUtils.getComponentForName(ventana, Constantes.DNI_CHOFER);
@@ -132,7 +132,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 		assertTrue(campoAnio.isEnabled());
 	}
 
-	// @Test
+	@Test
 	public void test_panelAdministrador_crearChoferPermanente() {
 
 		String dniChofer = "12345678";
@@ -177,7 +177,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 		assertTrue(IgualdadUtil.sonIguales(choferEsperado, choferAgregado));
 	}
 
-	// @Test
+	@Test
 	public void test_panelAdministrador_crearChoferTemporario() {
 
 		String dniChofer = "87654321";
@@ -211,7 +211,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 		assertTrue(IgualdadUtil.sonIguales(choferEsperado, choferAgregado));
 	}
 
-	// @Test
+	@Test
 	public void test_panelAdministrador_botonNuevoChofer_habilitacionChoferTemporario() {
 
 		JTextField campoDNI = (JTextField) TestUtils.getComponentForName(ventana, Constantes.DNI_CHOFER);
@@ -248,7 +248,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 		assertTrue(botonAceptar.isEnabled());
 	}
 
-	// @Test
+	@Test
 	public void test_panelAdministrador_botonNuevoChofer_habilitacionChoferPermanente() {
 
 		JTextField campoDNI = (JTextField) TestUtils.getComponentForName(ventana, Constantes.DNI_CHOFER);
@@ -318,7 +318,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 		assertTrue(botonAceptar.isEnabled());
 	}
 
-//	 @Test
+	 @Test
 	public void test_panelAdministrador_crearChoferExitoso_seAgregaAListaYSeVacianCampos() {
 		/*
 		 * 
@@ -365,7 +365,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 
 	}
 
-//	 @Test
+	 @Test
 	public void test_panelAdministrador_crearChoferConDNIRepetido_debeMostrarMensajeError() {
 		/*
 		 * 
@@ -391,7 +391,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 		assertTrue(choferes.containsKey(dniChoferRepetido));
 	}
 
-//	@Test
+	@Test
 	public void test_panelAdmin_verificarSueldoChofer() {
 
 		JTextField campoSueldoChofer = (JTextField) TestUtils.getComponentForName(ventana,
@@ -416,7 +416,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 	}
 
 	
-//	@Test
+	@Test
 	public void test_panelAdmin_verificarSueldoTotalChoferes() {
 
 		JTextField campoSueldoTotalChoferes = (JTextField) TestUtils.getComponentForName(ventana,

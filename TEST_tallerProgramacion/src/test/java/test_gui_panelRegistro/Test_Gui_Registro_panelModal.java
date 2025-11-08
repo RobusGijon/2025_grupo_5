@@ -71,7 +71,7 @@ public class Test_Gui_Registro_panelModal {
 		return clienteGuardado;
 	}
 	
-//	@Test
+	@Test
 	public void test_usuarioRepetido_deberiaLanzarMensaje() {
 		JPanel panelRegistro = (JPanel) TestUtils.getComponentForName(ventana, Constantes.PANEL_REGISTRO);
 		
@@ -101,7 +101,7 @@ public class Test_Gui_Registro_panelModal {
 		assertTrue(panelRegistro.isEnabled());
 	}
 	
-//	@Test
+	@Test
 	public void test_contraseniasIncorrectas_deberiaLanzarMensaje() {
 		JPanel panelRegistro = (JPanel) TestUtils.getComponentForName(ventana, Constantes.PANEL_REGISTRO);
 		
@@ -164,7 +164,7 @@ public class Test_Gui_Registro_panelModal {
 		assertTrue(panelRegistro.isEnabled());
 	}
 	
-//	@Test
+	@Test
 	public void test_usuarioNuevo_deberiaRegistrarseCorrectamente() {
 		JPanel panelRegistro = (JPanel) TestUtils.getComponentForName(ventana, Constantes.PANEL_REGISTRO);
 		JPanel panelLogin = (JPanel)  TestUtils.getComponentForName(ventana, Constantes.PANEL_LOGIN);
