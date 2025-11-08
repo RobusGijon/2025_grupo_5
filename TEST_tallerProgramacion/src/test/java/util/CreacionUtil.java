@@ -14,6 +14,7 @@ import modeloDatos.Combi;
 import modeloDatos.Vehiculo;
 import vista.Ventana;
 
+
 public class CreacionUtil {
 
     public static final String AUTO = "AUTO";
@@ -46,7 +47,7 @@ public class CreacionUtil {
             TestUtils.clickComponent(radioAuto, robot);
             TestUtils.borraJTextField(campoCantidadPlazas, robot);
         }
-        
+
 		switch (tipoVehiculo) {
 		case CreacionUtil.MOTO:
 			TestUtils.clickComponent(radioMoto, robot);

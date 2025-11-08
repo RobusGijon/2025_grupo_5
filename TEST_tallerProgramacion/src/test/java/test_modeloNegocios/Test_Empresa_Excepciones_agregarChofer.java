@@ -10,7 +10,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import excepciones.ChoferRepetidoException;
-import modeloDatos.Auto;
 import modeloDatos.Chofer;
 import modeloDatos.ChoferPermanente;
 import modeloDatos.ChoferTemporario;

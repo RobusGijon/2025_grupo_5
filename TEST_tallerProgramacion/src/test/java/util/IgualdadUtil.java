@@ -13,6 +13,7 @@ import modeloDatos.Usuario;
 import modeloDatos.Vehiculo;
 import modeloDatos.Viaje;
 
+
 public class IgualdadUtil {
 
 	public static boolean sonIguales(Chofer chofer1, Chofer chofer2) {

@@ -12,6 +12,7 @@ import junit.framework.Assert;
 import modeloDatos.Chofer;
 import modeloDatos.ChoferPermanente;
 
+
 public class Test_Chofer_Permanente {
 
 	private ChoferPermanente chofer;

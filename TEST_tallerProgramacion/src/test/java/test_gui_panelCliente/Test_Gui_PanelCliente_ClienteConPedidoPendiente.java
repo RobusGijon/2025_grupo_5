@@ -8,7 +8,7 @@ import org.junit.Test;
 import java.awt.Robot;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;

@@ -71,6 +71,7 @@ public class Test_Gui_PanelAdmin_CrearVehiculo {
 
 		this.irAlPanelDelAdministrador();
 	}
+	
 
 	@After
 	public void tearDown() {

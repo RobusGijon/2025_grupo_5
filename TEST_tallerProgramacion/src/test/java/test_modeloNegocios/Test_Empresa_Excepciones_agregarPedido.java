@@ -12,8 +12,6 @@ import excepciones.ClienteConPedidoPendienteException;
 import excepciones.ClienteConViajePendienteException;
 import excepciones.ClienteNoExisteException;
 import excepciones.SinVehiculoParaPedidoException;
-import excepciones.UsuarioYaExisteException;
-import excepciones.VehiculoRepetidoException;
 import modeloDatos.Auto;
 import modeloDatos.ChoferTemporario;
 import modeloDatos.Cliente;

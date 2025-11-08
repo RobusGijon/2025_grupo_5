@@ -21,7 +21,6 @@ import modeloDatos.Administrador;
 import modeloDatos.Chofer;
 import modeloDatos.ChoferPermanente;
 import modeloDatos.ChoferTemporario;
-import modeloDatos.Viaje;
 import modeloNegocio.Empresa;
 import util.Constantes;
 import util.CreacionUtil;
@@ -70,6 +69,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 
 		this.irAlPanelDelAdministrador();
 	}
+
 
 	@After
 	public void tearDown() {

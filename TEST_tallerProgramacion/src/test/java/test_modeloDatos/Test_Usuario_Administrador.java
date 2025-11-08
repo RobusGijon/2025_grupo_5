@@ -8,6 +8,7 @@ import org.junit.Test;
 import junit.framework.Assert;
 import modeloDatos.Administrador;
 
+
 public class Test_Usuario_Administrador {
 
 	

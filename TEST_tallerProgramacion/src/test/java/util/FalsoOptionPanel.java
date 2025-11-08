@@ -2,6 +2,7 @@ package util;
 
 import vista.IOptionPane;
 
+
 public class FalsoOptionPanel implements IOptionPane {
     private String mensaje;
 

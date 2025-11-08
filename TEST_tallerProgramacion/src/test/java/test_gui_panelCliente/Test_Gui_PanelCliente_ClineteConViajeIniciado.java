@@ -20,7 +20,7 @@ import modeloDatos.Auto;
 import modeloDatos.ChoferTemporario;
 import modeloDatos.Cliente;
 import modeloDatos.Pedido;
-import modeloDatos.Vehiculo;
+
 import modeloDatos.Viaje;
 import modeloNegocio.Empresa;
 import util.Constantes;

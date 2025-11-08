@@ -9,17 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import excepciones.UsuarioYaExisteException;
-import modeloDatos.Auto;
-import modeloDatos.Chofer;
-import modeloDatos.ChoferPermanente;
-import modeloDatos.ChoferTemporario;
 import modeloDatos.Cliente;
-import modeloDatos.Combi;
-import modeloDatos.Moto;
-import modeloDatos.Pedido;
-import modeloDatos.Vehiculo;
 import modeloNegocio.Empresa;
-import util.Constantes;
 
 public class Test_Empresa_Excepciones_agregarCliente {
 

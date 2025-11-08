@@ -12,7 +12,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
+
 import javax.swing.border.TitledBorder;
 
 import org.junit.After;

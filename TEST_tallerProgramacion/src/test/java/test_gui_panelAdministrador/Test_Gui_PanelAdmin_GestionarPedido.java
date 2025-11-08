@@ -76,8 +76,9 @@ public class Test_Gui_PanelAdmin_GestionarPedido {
 		if (ventana != null) {
 			ventana.dispose();
 		}
+		
 	}
 	
-	
+
 
 }

@@ -15,6 +15,7 @@ import util.Constantes;
 import util.TestUtils;
 import vista.Ventana;
 
+
 public class Test_Gui_Registro_ocultaLosBotones {
 	private Ventana ventana;
 	private Robot robot;
