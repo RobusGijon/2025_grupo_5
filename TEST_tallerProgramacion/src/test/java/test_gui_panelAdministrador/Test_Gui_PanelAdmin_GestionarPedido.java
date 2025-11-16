@@ -161,7 +161,7 @@ public class Test_Gui_PanelAdmin_GestionarPedido {
 		assertTrue("El chofer agregado debe figurar en LISTA_CHOFERES_LIBRES", IgualdadUtil.sonIguales(choferEmpresa, choferLista));
 	}
 
-	// @Test
+	@Test
 	public void test_listaVehiculosDisponibles_pobladaSoloDespuesDeSeleccionarPedido() {
 		robot.delay(TestUtils.getDelay());
 		@SuppressWarnings("unchecked")

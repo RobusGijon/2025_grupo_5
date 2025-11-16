@@ -365,7 +365,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 
 	}
 
-	@Test
+	 @Test	
 	public void test_panelAdministrador_crearChoferConDNIRepetido_debeMostrarMensajeError() {
 		/*
 		 * 
@@ -415,7 +415,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 
 	}
 
-	
+
 	@Test
 	public void test_panelAdmin_verificarSueldoTotalChoferes() {
 
