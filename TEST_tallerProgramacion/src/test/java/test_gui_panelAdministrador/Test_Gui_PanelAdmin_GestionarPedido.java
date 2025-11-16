@@ -141,7 +141,7 @@ public class Test_Gui_PanelAdmin_GestionarPedido {
 	}
 	
 
-//	@Test
+	@Test
 	public void test_listaPedidosPendientes_muestraPedidosCreados() {
 		@SuppressWarnings("unchecked")
 		JList<Pedido> listaPedidos = (JList<Pedido>) TestUtils.getComponentForName(ventana, Constantes.LISTA_PEDIDOS_PENDIENTES);
@@ -151,7 +151,7 @@ public class Test_Gui_PanelAdmin_GestionarPedido {
 		assertTrue("El pedido creado debe figurar en LISTA_PEDIDOS_PENDIENTES", IgualdadUtil.sonIguales(pedidoEmpresa, pedidoEnLista));
 	}
 
-//	@Test
+	@Test
 	public void test_listaChoferesLibres_muestraChoferesDesocupados() {
 		@SuppressWarnings("unchecked")
 		JList<Chofer> listaChoferes = (JList<Chofer>) TestUtils.getComponentForName(ventana, Constantes.LISTA_CHOFERES_LIBRES);
