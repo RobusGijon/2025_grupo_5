@@ -101,29 +101,21 @@ public class Test_Empresa_Excepciones_agregarViaje {
 	public void test_agregarViajeSinPedido_deberiaTirarExpecionCorrecta() {
 		/*
 		 * 	Test para comprobar que lance la excepcion: PedidoInexistenteException
-		 *  Escenario:	
-		 *  			Pedido Prueba 1: pedido1 = Pedido(clienteEmpresa, 1, true, true, 1, Constantes.ZONA_SIN_ASFALTAR)
-		 *  			Pedido Prueba 2: pedido2 = (clienteEmpresa, 4 pasajeros, si mascota, si baul, 10km, zona estandar)
-		 *  				>> No estan agregados a la empresa			
-		 *  
-		 *  			Cliente: El de la empresa
-		 *  
-		 *  			Chofer: El de la empresa
-		 *  
-		 *  			Vehiculo: El de la empresa
+		 *  Escenario:	Empresa con un auto, un cliente, un pedido y un chofer.
 		 *  
 		 * 	Prueba1:
-		 * 				crearViaje(pedido1, choferEmpresa, autoEmpresa)
-		 * 				Esperado: Excepcion PedidoInexistenteException 
-		 * 				>> Resultado: Correcto
+		 * 	pedido1 = Pedido(clienteEmpresa, 1, true, true, 1, Constantes.ZONA_SIN_ASFALTAR)
+		 * 	crearViaje(pedido1, choferEmpresa, autoEmpresa)
+		 * 	>> Esperado: Excepcion PedidoInexistenteException 
+		 * 	>> Resultado: Correcto
 		 * 
 		 * 	Prueba2: 
-		 * 				crearViaje(pedido2, choferEmpresa, autoEmpresa)
-		 * 				Esperado: Excepcion PedidoInexistenteException 
-		 * 				>> Resultado: Correcto
+		 *  pedido2 = (clienteEmpresa, 4 pasajeros, si mascota, si baul, 10km, zona estandar)	
+		 *  crearViaje(pedido2, choferEmpresa, autoEmpresa)
+		 * 	>> Esperado: Excepcion PedidoInexistenteException 
+		 * 	>> Resultado: Correcto
 		 * */
-		
-		
+				
 		Pedido pedido1 = new Pedido(clienteEmpresa, 1, true, true, 1, Constantes.ZONA_SIN_ASFALTAR);
 		Pedido pedido2 = new Pedido(clienteEmpresa, 4, true, true, 10, Constantes.ZONA_STANDARD);
 		
@@ -164,26 +156,21 @@ public class Test_Empresa_Excepciones_agregarViaje {
 	@Test
 	public void test_agregarViajeChoferNoDisponible_deberiaTirarExpecionCorrecta() {
 		/*
-		 *  Escenario:	
-		 *  			ChoferPrueba 1: choferPemanente = ("31419314", "Juan Perez", 2000, 3)
-		 *  			ChoferPrueba 2:	choferTemporario = ("31232121", "Jose Perez")
-		 *					>> No estan agregados a la empresa  			
-		 *  
-		 *  			Vehiculo: El de la empresa
-		 *
-		 *  			Cliente: El de la empresa
-		 *  	
-		 *  			Pedido: El de la empresa
+		 *  Escenario: Empresa con un auto, un cliente, un pedido y un chofer.
+		 *  Prueba: Se crean viajes con choferes no en la empresa  			
 		 *  
 		 * 	Prueba1:
-		 * 				crearViaje(pedidoEmpresa, choferTemporario, autoEmpresa)
-		 * 				Esperado: Excepcion ChoferNoDisponibleException
-		 * 				>> Resultado: Correcto
+		 *  choferPemanente = ("31419314", "Juan Perez", 2000, 3)
+		 * 	crearViaje(pedidoEmpresa, choferTemporario, autoEmpresa)
+		 * 	>> Esperado: Excepcion ChoferNoDisponibleException
+		 * 	>> Resultado: Correcto
 		 * 				
 		 * 	Prueba2: 
-		 * 				crearViaje(pedidoEmpresa, choferPermanente, autoEmpresa);
-		 * 				Esperado: Excepcion ChoferNoDisponibleException
-		 * 				>> Resultado: Correcto
+		 *  choferTemporario = ("31232121", "Jose Perez")
+		 * 	crearViaje(pedidoEmpresa, choferPermanente, autoEmpresa);
+		 * 	>> Esperado: Excepcion ChoferNoDisponibleException
+		 * 	>> Resultado: Correcto
+		 * 
 		 * */
 		
 		ChoferPermanente choferPermanente = new ChoferPermanente("31419314", "Juan Perez", 2000, 3);
@@ -226,26 +213,21 @@ public class Test_Empresa_Excepciones_agregarViaje {
 	@Test
 	public void test_agregarViajeVehiculoNoDisponible_deberiaTirarExpecionCorrecta() {
 		/*
-		 *  Escenario:	
-		 *  			Vehiculo prueba 1 : auto = ("ZZ999ZZ", 3, true)
-		 				Vehiculo prueba 2 : combi = ("MM888MM", 9, true)
-		 *  				>> No estan agregados a la empresa
-		 *  
-		 *  			Cliente: El de la empresa
-		 *  	
-		 *  			Pedido: El de la empresa
-		 *  
-		 *  			Chofer: El de la empresa
-		 *  
-		 * 	Prueba1:
-		 * 				crearViaje(pedidoEmpresa, choferEmpresa, auto)
-		 * 				Esperado: Excepcion VehiculoNoDisponibleException
-		 * 				>> Resultado: Correcto
+		 *  Escenario: Empresa con un auto, un cliente, un pedido y un chofer.
+		 *  Prueba: Se crean viajes con vehículos no en la empresa
+		 *
+		 *	Prueba1:
+		 *  auto = ("ZZ999ZZ", 3, true)
+		 * 	crearViaje(pedidoEmpresa, choferEmpresa, auto)
+		 * 	>> Esperado: Excepcion VehiculoNoDisponibleException
+		 * 	>> Resultado: Correcto
 		 * 				
-		 * 	Prueba2: 
-		 * 				crearViaje(pedidoEmpresa, choferEmpresa, combi);
-		 * 				Esperado: Excepcion VehiculoNoDisponibleException
-		 * 				>> Resultado: Correcto
+		 * 	Prueba2:
+		 *  combi = ("MM888MM", 9, true)
+		 * 	crearViaje(pedidoEmpresa, choferEmpresa, combi);
+		 * 	>> Esperado: Excepcion VehiculoNoDisponibleException
+		 * 	>> Resultado: Correcto
+		 * 
 		 * */
 		
 		Auto auto = new Auto("ZZ999ZZ", 3, true);
@@ -290,26 +272,20 @@ public class Test_Empresa_Excepciones_agregarViaje {
 	@Test
 	public void test_agregarViajeVehiculoNoValido_deberiaTirarExpecionCorrecta() {
 		/*
-		 *  Escenario:	
-		 *  			Vehiculo prueba 1 : autoQueNoCumple  = ("ZZ999ZZ", 3, false)
-		 				Vehiculo prueba 2 : combiQueNoCumple = ("MM888MM", 9, false)
-		 *  				>> Estan agregados a la empresa
-		 *  
-		 *  			Cliente: El de la empresa
-		 *  	
-		 *  			Pedido: El de la empresa (necesita llevar mascota y usar baul)
-		 *  
-		 *  			Chofer: El de la empresa
+		 *  Escenario: Empresa con un auto, un cliente, un pedido y un chofer.
+		 *	Prueba: Se crean viajes con vehículos ocupados
 		 *  
 		 * 	Prueba1:
-		 * 				crearViaje(pedidoEmpresa, choferEmpresa, autoQueNoCumple)
-		 * 				Esperado: Excepcion VehiculoNoValidoException
-		 * 				>> Resultado: Correcto
+		 *  autoQueNoCumple  = ("ZZ999ZZ", 3, false)
+		 * 	crearViaje(pedidoEmpresa, choferEmpresa, autoQueNoCumple)
+		 * 	>> Esperado: Excepcion VehiculoNoValidoException
+		 * 	>> Resultado: Correcto
 		 * 				
-		 * 	Prueba2: 
-		 * 				crearViaje(pedidoEmpresa, choferPermanente, combiQueNoCumple);
-		 * 				Esperado: Excepcion VehiculoNoValidoException
-		 * 				>> Resultado: Correcto
+		 * 	Prueba2:
+		 *  combiQueNoCumple = ("MM888MM", 9, false)
+		 * 	crearViaje(pedidoEmpresa, choferPermanente, combiQueNoCumple);
+		 * 	>> Esperado: Excepcion VehiculoNoValidoException
+		 * 	>> Resultado: Correcto
 		 * */
 		
 		this.agregarChoferGenerico();
@@ -358,24 +334,13 @@ public class Test_Empresa_Excepciones_agregarViaje {
 	@Test
 	public void test_agregarViajeClienteConViaje_deberiaTirarExpecionCorrecta() {
 		/*
-		 *  Escenario:	
-		 *  			Cliente Prueba: clienteEmpresa
-		 *  			
-		 *  			Pedido Prueba: pedidoEmpresa // El cliente trata de hacer el mismo pedido
-		 *  
-		 *  			Auto: El de la empresa
-		 *  	
-		 *  			Pedido: El de la empresa 
-		 *  
-		 *  			Chofer: El de la empresa
-		 *  
-		 *  			Viaje: (pedidoEmpresa, choferEmpresa, autoEmpresa)
-		 *  				>> Esta agregado a la empresa
+		 *  Escenario: Empresa con un auto, un cliente, un pedido y un chofer.
+		 *	Prueba: Se crea un viaje para un cliente que ya está viajando
 		 *  
 		 * 	Prueba:
-		 * 				crearViaje(pedidoEmpresa, choferEmpresa, autoEmpresa)
-		 * 				Esperado: Excepcion ClienteConViajePendienteException
-		 * 				>> Resultado: INCORRECTO -> El metodo no lanzo excepcion
+		 * 	crearViaje(pedidoEmpresa, choferEmpresa, autoEmpresa)
+		 * 	>> Esperado: Excepcion ClienteConViajePendienteException
+		 * 	>> Resultado: INCORRECTO -> El metodo no lanzo excepcion
 		 * 				
 		 * */
 		
@@ -387,7 +352,6 @@ public class Test_Empresa_Excepciones_agregarViaje {
 		Viaje viajeEmpresa = new Viaje(pedidoEmpresa, choferEmpresa, autoEmpresa);
 		ArrayList<Viaje> viajesIniciados = new ArrayList<>();
 		viajesIniciados.add(viajeEmpresa);
-		
 		
 		try {
 			empresa.crearViaje(pedidoEmpresa, choferEmpresa, autoEmpresa);

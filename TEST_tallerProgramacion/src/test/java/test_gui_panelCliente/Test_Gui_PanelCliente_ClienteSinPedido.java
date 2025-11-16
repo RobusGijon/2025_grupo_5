@@ -37,6 +37,7 @@ public class Test_Gui_PanelCliente_ClienteSinPedido {
 	private Cliente clienteEmpresa;
 	private FalsoOptionPanel miOptionPanel;
 	private Controlador controlador;
+
 	private Empresa empresa;
 	
 	public Cliente getClienteEmpresa() {

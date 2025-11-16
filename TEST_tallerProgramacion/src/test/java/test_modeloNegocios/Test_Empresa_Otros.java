@@ -118,28 +118,24 @@ public class Test_Empresa_Otros {
 	@Test
 	public void test_validarPedido() {
 		/*
-		 *  Escenario:
-		 *  	   Auto: ("AA123AA", 4 asientos, NO puede llevar mascota)
-		 *  		>> Agregado en la prueba 1
-		 *  	  Combi: ("CC531CC", 8 asientos, puede llevar mascota)
-		 * 			>> Agreado en la prueba 2 y 3
-		 * 
-		 * 		Cliente: El de la empresa
+		 *  Escenario: Empresa con un vehículo, un chofer y un pedido
 		 * 
 		 * 	Prueba 1: Test para comprobar que se verifique la condicion de mascota
-		 * 		pedidoEmpresa (Cliente, 1 pasajeros, CON mascota, CON baul, 10km, zona estándar)
-		 * 		Esperado: Falso (lo puede cubrir la Combi)
-		 * 		>> Resultado: Correcto
+		 * 	Auto: ("AA123AA", 4 asientos, NO puede llevar mascota)
+		 *  pedidoEmpresa
+		 *  >> Esperado: Falso (lo puede cubrir la Combi)
+		 *  >> Resultado: Correcto
 		 *
 		 * 	Prueba 2: Test para comprobar que verifique un pedido que cumple
-		 * 		Pedido: pedidoEmpresa
-		 * 		Esperado: Verdadero
-		 * 		>> Resultado: Correcto
+		 * 	Combi: ("CC531CC", 8 asientos, puede llevar mascota)
+		 * 	pedidoEmpresa
+		 * 	>> Esperado: Verdadero
+		 * 	>> Resultado: Correcto
 		 * 	
 		 * 	Prueba 3: Test para comprobar que se verifique la condicion de capacidad  
-		 * 		Pedido (Cliente, 11 pasajeros, CON mascota, CON baul, 10km, zona estándar)
-		 * 		Esperado: FALSO (exceso de pasajeros respecto a la Combi)
-		 * 		>> Resultado: INCORRECTO -> validó el pedido no valido.
+		 * 	Pedido (Cliente, 11 pasajeros, CON mascota, CON baul, 10km, zona estándar)
+		 * 	>> Esperado: FALSO (exceso de pasajeros respecto a la Combi)
+		 * 	>> Resultado: INCORRECTO -> validó el pedido no valido.
 		 * 
 		 */
 

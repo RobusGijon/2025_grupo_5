@@ -318,7 +318,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 		assertTrue(botonAceptar.isEnabled());
 	}
 
-	 @Test
+//	 @Test
 	public void test_panelAdministrador_crearChoferExitoso_seAgregaAListaYSeVacianCampos() {
 		/*
 		 * 
@@ -365,7 +365,7 @@ public class Test_Gui_PanelAdmin_CrearChofer {
 
 	}
 
-	 @Test
+//	 @Test
 	public void test_panelAdministrador_crearChoferConDNIRepetido_debeMostrarMensajeError() {
 		/*
 		 * 

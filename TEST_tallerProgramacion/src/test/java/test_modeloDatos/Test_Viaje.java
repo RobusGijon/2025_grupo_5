@@ -6,7 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-
 import junit.framework.Assert;
 import modeloDatos.Chofer;
 import modeloDatos.ChoferTemporario;
@@ -96,33 +95,29 @@ public class Test_Viaje {
     	/*
     	 * 	Escenario: 	Viaje por zona estandar
     	 * 
-    	 * 				cliente: ("nombreUsuario", "pass", "nombreReal");
-    	 * 				pedidoEstandar: (cliente, 3, SIN Mascota, SIN Baul, 10, Constantes.ZONA_STANDARD)
-    	 * 				combi: ("AB123CD", 8, true);
-    	 * 				choferTemp: ("21931123", "Armando Paredes");
+    	 * 	cliente: ("nombreUsuario", "pass", "nombreReal");
+    	 * 	pedidoEstandar: (cliente, 3, SIN Mascota, SIN Baul, 10, Constantes.ZONA_STANDARD)
+    	 * 	combi: ("AB123CD", 8, true);
+    	 * 	choferTemp: ("21931123", "Armando Paredes");
     	 * 			
-    	 * 				viajeEstandar: (pedidoEstandar, choferTemp, combi) 
+    	 * 	viajeEstandar: (pedidoEstandar, choferTemp, combi) 
     	 * 			
-    	 * 	Prueba:	 	getValor deberia devolver el incremento correcto de solo la zona estandar
+    	 * 	Salida esperada: getValor deberia devolver el incremento correcto de solo la zona estandar
     	 * 			
-    	 * 				>> Esperado: 2300.0
-    	 * 				>> Resultado: INCORRECTO -> 1000.0
+    	 * 	>> Esperado: 2300.0
+    	 * 	>> Resultado: INCORRECTO -> 1000.0
     	 * 
     	 * */
     
-    	
     	Pedido pedidoEstandar = new Pedido(cliente, 3, false, false, 10, Constantes.ZONA_STANDARD);
     	Viaje viajeEstandar = new Viaje(pedidoEstandar, choferTemp, combi);
     	
     	double valorEsperado = this.getValorEsperado(viajeEstandar);
     	
-    	
-    	
     	String msjError = "El metodo calculo mal el valor. valorEsperado: " + valorEsperado + 
     										" | valorObtenido: " + viajeEstandar.getValor();  
     	assertEquals(msjError, valorEsperado, viajeEstandar.getValor(), 1e-5);
-    	
-    	
+
     }
     
     @Test

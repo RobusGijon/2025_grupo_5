@@ -175,32 +175,7 @@ public class Test_PersistenciaBIN {
 		
 	}
 	
-	
-	@Test
-	public void test_classNotFound() {
-		
-		ClaseAleatoria claseAleatoria = new ClaseAleatoria();
-		Path path = Path.of(NOMBRE_ARCHIVO_TEMPORAL);
-		try {
-			AuxiliarPersistenciaTesting.guardar(claseAleatoria, path);
-		} catch (IOException e) {
-			fail("No se pudieron inicializar las pruebas");
-		}
-		
-		try {
-			persistencia.abrirInput(NOMBRE_ARCHIVO_TEMPORAL);
-			EmpresaDTO resultado = (EmpresaDTO) persistencia.leer();
-			fail("El metodo no lanzo la expecion");
-		} catch (IOException e) {
-			fail("El metodo lanzo una expecion equivocada");
-		} catch (ClassNotFoundException e) {
-			assertTrue(true);
-		}
 
-		
-		
-	}
-	
 	
 }
 

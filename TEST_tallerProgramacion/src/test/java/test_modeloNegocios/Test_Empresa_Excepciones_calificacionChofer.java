@@ -137,16 +137,14 @@ public class Test_Empresa_Excepciones_calificacionChofer {
 	@Test
 	public void test_calificacionChofer_choferSinViajesExcepcion() {
 		/*
-		 * 	Escenario:
-		 * 				ChoferSinViajes = ChoferTemporario("22111666", "Felix Andres Aranceli");
+		 * 	Escenario: Empresa con tres choferes: uno permanente con varios viajes, uno temporario con un solo viaje y otro temporario sin viajes.
+		 *	Prueba: Chofer sin viajes
 		 * 
-		 * 	Prueba: 	el metodo deberia lanzar la excepcion choferSinViajes
-		 * 				>> Esperado: Excepcion: SinViajesException
-		 * 				>> Resultado: INCORRECTO -> calificacion = 0.0
+		 * 	>> Esperado: Excepcion: SinViajesException
+		 * 	>> Resultado: INCORRECTO -> calificacion = 0.0
 		 * 
 		 * */
 		
-
 		try {
 			double calificacion = empresa.calificacionDeChofer(choferSinViajes);
 			fail("El metodo no lanzo la excepcion esperada, el chofer tuvo una calificacion de: " + calificacion);
@@ -159,17 +157,15 @@ public class Test_Empresa_Excepciones_calificacionChofer {
 	@Test
 	public void test_calificacionChofer_ChoferConVariosViajes() {
 		/*
-		 * 	Escenario:
-		 * 				* Se añaden los viajes genericos a la empresa
-		 * 				choferConVariosViajes = ("11222333", "Juan Carlos Jose", 2000, 3);
-		 * 
-		 * 	Prueba: 	El metodo deberia devolver el promedio calculado de un chofer con varios viajes
-		 * 				>> Esperado: calificacion = (3 + 4 + 5) / 3 = 4
-		 * 				>> Resultado: INCORRECTO -> calificacion = 1.0
+		 * 	Escenario: Empresa con tres choferes: uno permanente con varios viajes, uno temporario con un solo viaje y otro temporario sin viajes.
+		 *	Prueba: Chofer sin viajes
+		 * 	
+		 *  El metodo deberia devolver el promedio calculado de un chofer con varios viajes
+		 *  >> Esperado: calificacion = (3 + 4 + 5) / 3 = 4
+		 *  >> Resultado: INCORRECTO -> calificacion = 1.0
 		 * 
 		 * */
-		
-		
+				
 		this.setViajesTerminados();
 		
 		try {
@@ -185,16 +181,13 @@ public class Test_Empresa_Excepciones_calificacionChofer {
 	@Test
 	public void test_calificacionChofer_ChoferUnViaje() {
 		/*
-		 * 	Escenario:
-		 * 				* Se añaden los viajes genericos a la empresa
-		 * 				ChoferConUnSoloViaje = ("44555666", "Jose Sanchez");
+		 * 	Escenario: Empresa con tres choferes: uno permanente con varios viajes, uno temporario con un solo viaje y otro temporario sin viajes.
+		 *	Prueba: Chofer con un solo viaje
 		 * 
-		 * 	Prueba: 	el metodo deberia lanzar la excepcion choferSinViajes
-		 * 				>> Esperado: calificacion = 1.0
-		 * 				>> Resultado: Correcto
+		 * 	>> Esperado: calificacion = 1.0
+		 * 	>> Resultado: Correcto
 		 * 
 		 * */
-		
 		
 		this.setViajesTerminados();
 		
@@ -207,15 +200,4 @@ public class Test_Empresa_Excepciones_calificacionChofer {
 			fail("El metodo lanzo una excepcion incorrecta (SinViajesException)");
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }

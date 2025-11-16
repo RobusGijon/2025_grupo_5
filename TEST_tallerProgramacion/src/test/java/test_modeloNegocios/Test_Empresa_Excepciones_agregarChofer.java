@@ -41,19 +41,16 @@ public class Test_Empresa_Excepciones_agregarChofer {
 	@Test
 	public void test_agregarChoferUnico_NOdeberiaTirarExpecion() {
 		/*
-		 *  Escenario:  Se agregan dos choferes con MISMO DNI pero NOMBRE distinto.
+		 *  Escenario: Empresa vacía
+		 *  Prueba: Se agregan dos choferes con MISMO DNI pero NOMBRE distinto.
+		 *  Salida esperada: agregarChofer NO deberia tirar ChoferRepetidoException
+		 *						cuando el nombre no se repite (aunque el DNI coincida)
 		 *  
+		 *	chofer1: Temporario("42184312", "Juan Perez")
+		 *  chofer2: Temporario("42184312", "Juan Carlos")
 		 *  
-		 *              chofer1: Temporario("42184312", "Juan Perez")
-		 *              chofer2: Temporario("42184312", "Juan Carlos")
-		 *              
-		 *              Se intenta registrar ambos en la empresa.
-		 *  
-		 *  Prueba:     agregarChofer NO deberia tirar ChoferRepetidoException
-		 *              cuando el nombre no se repite (aunque el DNI coincida).
-		 *  
-		 *              >> Esperado: NO lanzar excepcion (ChoferRepetidoException)
-		 *              >> Resultado: Correcto
+		 *	>> Esperado: NO lanzar excepcion (ChoferRepetidoException)
+		 *  >> Resultado: Correcto
 		 */
 		
 		ChoferTemporario chofer1 = new ChoferTemporario("42184312", "Juan Perez");
@@ -71,17 +68,18 @@ public class Test_Empresa_Excepciones_agregarChofer {
 	@Test
 	public void test_agregarChoferRepetido_deberiaTirarExpecion() {
 		/*
-		 *  Escenario:  Se agregan dos choferes con NOMBRE y DNI iguales.
-		 *  
-		 *              chofer1: ("49120123", "Juan Perez")
-		 *              chofer2: ("49120123", "Perez Jose")
+		 *  Escenario:  Empresa vacía.
+		 *  Prueba:  Se agregan dos choferes con NOMBRE y DNI iguales.
+		 *  Salida esperada: agregarChofer DEBERIA tirar ChoferRepetidoException ante nombres repetidos.
+		 *
+		 *  chofer1: ("49120123", "Juan Perez")
+		 *  chofer2: ("49120123", "Perez Jose")
 		 *              
-		 *              Se intenta registrar ambos en la empresa.
+		 *  Se intenta registrar ambos en la empresa.
 		 *  
-		 *  Prueba:     agregarChofer DEBERIA tirar ChoferRepetidoException ante nombres repetidos.
-		 *  
-		 *              >> Esperado: Lanzar ChoferRepetidoException
-		 *              >> Resultado: INCORRECTO -> agrego a los dos choferes 
+		 *  >> Esperado: Lanzar ChoferRepetidoException
+		 *  >> Resultado: INCORRECTO -> agrego a los dos choferes 
+		 *
 		 */
 		
 		ChoferTemporario chofer1 = new ChoferTemporario("49120123", "Juan Perez");
@@ -99,22 +97,22 @@ public class Test_Empresa_Excepciones_agregarChofer {
 	@Test
 	public void test_agregarChofer_verificarQueSeAgregaron() {
 		/*
-		 *  Escenario:  Se agregan dos choferes y luego se verifica que la empresa los agrego
+		 *  Escenario:  Empresa vacía
+		 *  Prueba:  Se agregan dos choferes y luego se verifica que la empresa los agrego
 		 *              en la estructura interna (HashMap)
+		 *  Salida esperada: Luego de agregar ambos, el HashMap de choferes deberia
+		 *						reflejar los ingresos realizados.
 		 *  
-		 *              empresa: Empresa.getInstance();
-		 *              dniChofer1 = "42184312"
-		 *              dniChofer2 = "42184312"
-		 *              chofer1: (dniChofer1, "Juan Perez")
-		 *              chofer2: (dniChofer2, "Juan Carlos")
+		 *  empresa: Empresa.getInstance();
+		 *  dniChofer1 = "42184312"
+		 *  dniChofer2 = "42184312"
+		 *  chofer1: (dniChofer1, "Juan Perez")
+		 *  chofer2: (dniChofer2, "Juan Carlos")
 		 *  
-		 *  Prueba:     Luego de agregar ambos, el HashMap de choferes deberia
-		 *              reflejar los ingresos realizados.
-		 *  
-		 *              >> Esperado: El HashMap contiene las claves utilizadas
-		 *                           (dniChofer1 y dniChofer2) y no se produce
-		 *                           ChoferRepetidoException.
-		 *              >> Resultado: Correcto
+		 *  >> Esperado: El HashMap contiene las claves utilizadas
+		 *  			(dniChofer1 y dniChofer2) y no se produce
+		 *               ChoferRepetidoException.
+		 *  >> Resultado: Correcto
 		 */
 		
 		String dniChofer1 = "42184312";

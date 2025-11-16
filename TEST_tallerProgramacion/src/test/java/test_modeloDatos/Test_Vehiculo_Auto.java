@@ -10,7 +10,6 @@ import modeloDatos.Cliente;
 import modeloDatos.Pedido;
 import util.Constantes;
 
-
 public class Test_Vehiculo_Auto {
 	
 	private Auto autoMascota;
@@ -25,12 +24,10 @@ public class Test_Vehiculo_Auto {
 	@Before
 	public void setUp() throws Exception {
 		cliente = new Cliente("nombreUsuario", "pass", "nombreReal");
-		
-		
 		autoMascota = new Auto(PATENTE, CANTIDAD_PLAZAS, true);
 		autoSinMascota = new Auto(PATENTE, CANTIDAD_PLAZAS, false);
 	}
-	
+
 	@Test
 	public void test_getCantidadPlazas() {
 		assertEquals(autoMascota.getCantidadPlazas(), CANTIDAD_PLAZAS);
@@ -51,20 +48,21 @@ public class Test_Vehiculo_Auto {
 	@Test
 	public void test_getPuntajePedido_excesoCapacidad() {
 		/*
-		 * 	Escenario: Pedido que excede la cantidad de asientos
+		 * 	Escenario 1: Auto con mascota
+		 *  Escenario 2: Auto sin mascota
+		 *  Salida esperada: ambos autos deberian devolver null
 		 * 
-		 * 		  			  cliente: ("nombreUsuario", "pass", "nombreReal");
-		 * 		PedidoExcesoCapacidad: (cliente, 5 pasajeros, SIN mascota, SIN baul, 10km, Zona peligrosa) 
+		 *  cliente: ("nombreUsuario", "pass", "nombreReal");
+		 * 	PedidoExcesoCapacidad: (cliente, 5 pasajeros, SIN mascota, SIN baul, 10km, Zona peligrosa)
 		 * 
-		 * 	Prueba: ambos autos deberian devolver null
-		 * 				
-		 * 			autoMascota: ("AA123AA", 4, puede llevar mascota)
-		 * 			>>  Esperado: null
-		 * 			>> Resultado: Correcto
+		 * 	autoMascota: ("AA123AA", 4, puede llevar mascota)
+		 * 	>>  Esperado: null
+		 * 	>> Resultado: Correcto
 		 * 
-		 * 			autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
-		 * 			>>  Esperado: null
-		 * 			>> Resultado: Correcto
+		 * 	autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
+		 * 	>>  Esperado: null
+		 * 	>> Resultado: Correcto
+		 * 
 		 * */	
 		
 		int cantPasajeros = autoMascota.getCantidadPlazas() + 1;
@@ -76,20 +74,20 @@ public class Test_Vehiculo_Auto {
 	@Test
 	public void test_getPuntajePedido_autoSinMascotas() {
 		/*
-		 * 	Escenario: Pedido que lleva mascota
+		 * 	Escenario 1: Auto con mascota
+		 *  Escenario 2: Auto sin mascota
+		 *	Salida esperada: autoSinMascota deberia devolver null, mientras que el otro no 
+		 *
+		 * 	cliente: ("nombreUsuario", "pass", "nombreReal");
+		 *  PedidoMascota: (cliente, 1 pasajeros, CON mascota, SIN baul, 10km, Zona peligrosa);
 		 * 
-		 * 		  			  cliente: ("nombreUsuario", "pass", "nombreReal");
-		 * 				PedidoMascota: (cliente, 1 pasajeros, CON mascota, SIN baul, 10km, Zona peligrosa) 
+		 * 	autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
+		 *	>> Esperado: null
+		 *	>>  Resultado: Correcto
 		 * 
-		 * 	Prueba: autoSinMascota deberia devolver null, mientras que el otro no
-		 * 				
-		 * 			autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
-		 * 			>>   Esperado: null
-		 * 			>>  Resultado: Correcto
-		 * 
-		 * 			   autoMascota: ("AA123AA", 4, puede llevar mascota)
-		 * 			>> 	 Esperado: NOT null
-		 * 			>> 	Resultado: Correcto
+		 * 	autoMascota: ("AA123AA", 4, puede llevar mascota)
+		 *	>> Esperado: NOT null
+		 *	>> Resultado: Correcto
 		 * 
 		 * */
 		
@@ -101,20 +99,20 @@ public class Test_Vehiculo_Auto {
 	@Test
 	public void test_getPuntajePedido_usoBaul_deberiaPoder() {
 		/*
-		 * 	Escenario: Pedido que necesita uso de baul
+		 * 	Escenario 1: Auto con mascota
+		 *  Escenario 2: Auto sin mascota
+		 *	Salida esperada: ambos autos deberian retornar un puntaje no nulo
 		 * 
-		 * 		  			  cliente: ("nombreUsuario", "pass", "nombreReal");
-		 * 				   PedidoBaul: (cliente, 1 pasajeros, SIN mascota, CON baul, 10km, Zona sin asfaltar) 
-		 * 
-		 * 	Prueba: ambos autos deberian retornar un puntaje no nulo
+		 * 	cliente: ("nombreUsuario", "pass", "nombreReal");
+		 *	PedidoBaul: (cliente, 1 pasajeros, SIN mascota, CON baul, 10km, Zona sin asfaltar) 
 		 * 				
-		 * 			autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
-		 * 			>>   Esperado: NOT null
-		 * 			>>  Resultado: Correcto
+		 * 	autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
+		 * 	>> Esperado: NOT null
+		 * 	>> Resultado: Correcto
 		 * 		
-		 * 			autoMascota: ("AA123AA", 4, puede llevar mascota)
-		 * 			>>  Esperado: NOT null
-		 * 			>> Resultado: Correcto
+		 * 	autoMascota: ("AA123AA", 4, puede llevar mascota)
+		 * 	>>  Esperado: NOT null
+		 * 	>> Resultado: Correcto
 		 * 
 		 * */
 		
@@ -124,37 +122,34 @@ public class Test_Vehiculo_Auto {
 		assertNotNull(autoSinMascota.getPuntajePedido(pedidoSinBaul));
 	}
 	
-
-	
 	@Test
 	public void test_getPuntajePedido_usoBaul() {
 		/*
-		 * 	Escenario: Pedidos con diferentes pasajeros, todos necesitando uso de baul
+		 * 	Escenario 1: Auto con mascota
+		 *  Escenario 2: Auto sin mascota
+		 *	Salida esperada: ambos autos deberian devolver el mismo puntaje
 		 * 
-		 * 		  			  cliente: ("nombreUsuario", "pass", "nombreReal");
-		 * 		 PedidoBaul4Pasajeros: (cliente, 4 pasajeros, SIN mascota, CON baul, 10km, Zona peligrosa) 
-		 * 		  PedidoBaul1Pasajero: (cliente, 1 pasajeros, SIN mascota, CON baul, 10km, Zona peligrosa)
-		 * 
-		 * 	Prueba: ambos autos deberian devolver el mismo puntaje
+		 *	cliente: ("nombreUsuario", "pass", "nombreReal");
+		 * 	PedidoBaul4Pasajeros: (cliente, 4 pasajeros, SIN mascota, CON baul, 10km, Zona peligrosa) 
+		 * 	PedidoBaul1Pasajero: (cliente, 1 pasajeros, SIN mascota, CON baul, 10km, Zona peligrosa)
 		 * 				
-		 * 			autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
-		 * 				Pedido4Pasajero
-		 * 				>>  Esperado: 160
-		 * 				>> Resultado: Correcto
+		 * 	autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
+		 * 	Pedido4Pasajero
+		 * 	>> Esperado: 160
+		 * 	>> Resultado: Correcto
+		 * 	
+		 * 	Pedido1Pasajero
+		 * 	>> Esperado: 40
+		 * 	>> Resultado: Correcto
+		 * 	
+		 * 	autoMascota: ("AA123AA", 4, puede llevar mascota)
+		 * 	Pedido4Pasajero
+		 * 	>> Esperado: 160
+		 * 	>> Resultado: Correcto
 		 * 							
-		 * 				Pedido1Pasajero
-		 * 				>>  Esperado: 40
-		 * 				>> Resultado: Correcto
-		 * 		
-		 * 
-		 * 			autoMascota: ("AA123AA", 4, puede llevar mascota)
-		 * 				Pedido4Pasajero
-		 * 				>>  Esperado: 160
-		 * 				>> Resultado: Correcto
-		 * 							
-		 * 				Pedido1Pasajero
-		 * 				>>  Esperado: 40
-		 * 				>> Resultado: Correcto
+		 * 	Pedido1Pasajero
+		 * 	>> Esperado: 40
+		 * 	>> Resultado: Correcto
 		 * 	
 		 * */
 		 
@@ -175,38 +170,33 @@ public class Test_Vehiculo_Auto {
 	@Test
 	public void test_getPuntajePedido_SinUsoBaul() {
 		/*
-		 * 	Escenario: Pedidos con diferentes pasajeros, todos SIN necesitar uso de baul
-		 * 
-		 * 		  			  cliente: ("nombreUsuario", "pass", "nombreReal");
-		 * 		  PedidoBaul1Pasajero: (cliente, 1 pasajeros, SIN mascota, SIN baul, 10km, Zona peligrosa)
-		 * 
-		 * 	Prueba: ambos autos deberian devolver el mismo puntaje
-		 * 				
-		 * 			autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
-		 * 				Pedido1Pasajero
-		 * 				>>  Esperado: 30
-		 * 				>> Resultado: INCORRECTO -> 40
-		 * 			
-		 * 			autoMascota: ("AA123AA", 4, puede llevar mascota)
-		 * 				Pedido1Pasajero
-		 * 				>>  Esperado: 30
-		 * 				>> Resultado: INCORRECTO -> 40
-		 * */		
+		 * 	Escenario 1: Auto con mascota
+		 *  Escenario 2: Auto sin mascota
+		 *	Salida esperada: ambos autos deberian devolver el mismo puntaje
+		 *  
+		 *  cliente: ("nombreUsuario", "pass", "nombreReal");
+		 * 	PedidoBaul1Pasajero: (cliente, 1 pasajeros, SIN mascota, SIN baul, 10km, Zona peligrosa)
+		 * 	
+		 * 	autoSinMascota: ("AA123AA", 4, NO puede llevar mascota)
+		 * 	Pedido1Pasajero
+		 * 	>>  Esperado: 30
+		 * 	>> Resultado: INCORRECTO -> 40
+		 * 	
+		 * 	autoMascota: ("AA123AA", 4, puede llevar mascota)
+		 * 	Pedido1Pasajero
+		 * 	>>  Esperado: 30
+		 * 	>> Resultado: INCORRECTO -> 40
+		 *
+		 * */
 		
 		Pedido pedidoBaul1Pasajeros = new Pedido(cliente, 1, false, false, 10, Constantes.ZONA_PELIGROSA);
-		
-
 		double puntajeEsperado1 = 30 * pedidoBaul1Pasajeros.getCantidadPasajeros();
 		
 		assertTrue("El vehiculo calculo mal el puntaje. puntajeCalculado: " + autoMascota.getPuntajePedido(pedidoBaul1Pasajeros)
 																				  + " | puntajeEspeerado: " + puntajeEsperado1,
 														autoMascota.getPuntajePedido(pedidoBaul1Pasajeros) == puntajeEsperado1);
-		
 		assertTrue("El vehiculo calculo mal el puntaje. puntajeCalculado: " + autoSinMascota.getPuntajePedido(pedidoBaul1Pasajeros)
 																						+ " | puntajeEspeerado: " + puntajeEsperado1,
 															autoSinMascota.getPuntajePedido(pedidoBaul1Pasajeros) == puntajeEsperado1);
-		
 	}
-	
-
 }

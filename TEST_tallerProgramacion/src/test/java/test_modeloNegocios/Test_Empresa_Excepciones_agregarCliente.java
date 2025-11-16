@@ -57,15 +57,18 @@ public class Test_Empresa_Excepciones_agregarCliente {
 	@Test
 	public void test_agregarClienteRepetidos_DeberiaVolverExcepcion() {
 		/*
-		 *  Escenario:  Se intenta agregar varias veces el MISMO nombre de usuario.
+		 *  Escenario:  Se agregan tres clientes con usuarios distintos y luego
+		 *              se verifica su presencia en la estructura interna (HashMap) de la empresa.
 		 *  
 		 *              empresa: Empresa.getInstance();
-		 *              cliente:  ("nombreUsuario1", "pass1", "nombreReal1") x 3 veces
+		 *              nombreUs1 = "nombreUsuario1"
+		 *              nombreUs2 = "nombreUsuario2"
+		 *              nombreUs3 = "nombreUsuario3"
 		 *              
-		 *  Prueba:     agregarCliente DEBERIA lanzar UsuarioYaExisteException
-		 *              cuando el nombre de usuario ya existe.
+		 *  Prueba:     Luego de agregar, el HashMap de clientes DEBE contener
+		 *              las claves (nombres de usuario) utilizadas.
 		 *  
-		 *              >> Esperado: Lanzar UsuarioYaExisteException
+		 *              >> Esperado: los 3 clientes dentro del HashMap de empresa
 		 *              >> Resultado: Correcto
 		 */
 		

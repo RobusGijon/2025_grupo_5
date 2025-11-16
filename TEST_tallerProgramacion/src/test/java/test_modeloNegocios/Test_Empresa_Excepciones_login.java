@@ -2,8 +2,6 @@ package test_modeloNegocios;
 
 import static org.junit.Assert.*;
 
-
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -32,7 +30,6 @@ import util.Constantes;
 
 import org.junit.Before;
 import org.junit.Test;
-
 
 public class Test_Empresa_Excepciones_login {
 

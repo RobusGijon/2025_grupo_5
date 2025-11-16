@@ -12,7 +12,6 @@ import junit.framework.Assert;
 import modeloDatos.Chofer;
 import modeloDatos.ChoferPermanente;
 
-
 public class Test_Chofer_Permanente {
 
 	private ChoferPermanente chofer;
@@ -51,7 +50,7 @@ public class Test_Chofer_Permanente {
 		assertEquals(chofer.getCantidadHijos(), 3);
 	}
 	
-	//	El sueldo bruto se calcula incrementando el sueldo basico a partir de un plus por antiguedad y un plus por cantidad de hijos. 
+	//	El sueldo bruto se calcula incrementando el sueldo basico a partir de un plus por antiguedad y un plus por cantidad de hijos.
 	//	Se icrementa un 5% del basico por cada aÃ±o de antiguedad, hasta llegar a un maximo incremento de 100% que se logra a los 20 anios.
 	//	Se icrementa un 7% del basico por cada hijo
 		
@@ -75,11 +74,10 @@ public class Test_Chofer_Permanente {
 	public void test_getSueldoBruto_sinPlus() {
 		/*	
 		 * 	Escenario: Chofer sin ningun plus: sin hijos ni antiguedad	
+		 * 	Salida esperada: Deberia devolver el salarioBasico
 		 * 
 		 * 			choferSinPlus = ("11222333", "Juan Perez", Year.now().getValue(), 0);
 		 * 
-		 * 	  Prueba: Deberia devolver el salarioBasico
-		 * 			
 		 * 			>> Esperado: 500000.0
 		 * 			>> Resultado: Correcto
 		 * 
@@ -98,17 +96,16 @@ public class Test_Chofer_Permanente {
 	public void test_getSueldoBruto_plus_hijos() {
 		/*	
 		 * 	Escenario: Chofer con hijos, sin antiguedad
+		 * 	Salida esperada: Deberia devolver el salarioBasico mas el plus de los hijos
 		 * 
 		 * 			choferConHijos = ("11222333", "Juan Perez", Year.now().getValue(), 3);
-		 * 
-		 * 	  Prueba: Deberia devolver el salarioBasico mas el plus de los hijos
 		 * 			
 		 * 			>> Esperado: 605000.0
 		 * 			>> Resultado: Correcto
 		 * 
 		 * */
 		
-		ChoferPermanente choferConHijos = new ChoferPermanente("11222333", "Juan Perez", Year.now().getValue(), 3);
+		ChoferPermanente choferConHijos = new ChoferPermanente("11222333", "Juan Perez", Year.now().getValue(), 2);
 		
 		double sueldoBrutoEsperado = formulaSueldoBruto(choferConHijos);
 		
@@ -120,13 +117,11 @@ public class Test_Chofer_Permanente {
 	public void test_getSueldoBruto_plus_antiguedad() {
 		/*	
 		 * 	Escenario: Chofer con antiguedad sin hijos
+		 * 	Salida esperada: Deberia devolver el salarioBasico mas el plus de la antiguedad
 		 * 
 		 * 			AnioActual = 2025
-		 * 
 		 * 			choferConAntiguedad = ("11222333", "Juan Perez", 2000, 0);
 		 * 
-		 * 	  Prueba: Deberia devolver el salarioBasico mas el plus de la antiguedad
-		 * 			
 		 * 			>> Esperado: 1000000.0
 		 * 			>> Resultado: INCORRECTO -> 1125000.0
 		 * 
@@ -145,12 +140,10 @@ public class Test_Chofer_Permanente {
 	public void test_getSueldoBruto_plus_varios() {
 		/*	
 		 * 	Escenario: Chofer con antiguedad y con hijos
-		 * 
+		 *  Salida esperada: Deberia devolver el salarioBasico mas el plus de los hijos mas el plus de la antiguedad
+		*
 		 * 			AnioActual = 2025
-		 * 
 		 * 			choferConAntiguedad = ("11222333", "Juan Perez", 2000, 5);
-		 * 
-		 * 	  Prueba: Deberia devolver el salarioBasico mas el plus de los hijos mas el plus de la antiguedad
 		 * 			
 		 * 			>> Esperado: 1300000.0
 		 * 			>> Resultado: INCORRECTO -> 1175000.0

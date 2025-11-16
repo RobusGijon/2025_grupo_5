@@ -15,6 +15,12 @@ import org.junit.Test;
 
 import controlador.Controlador;
 import modeloDatos.Administrador;
+import modeloDatos.Chofer;
+import modeloDatos.ChoferTemporario;
+import modeloDatos.Cliente;
+import modeloDatos.Pedido;
+import modeloDatos.Vehiculo;
+import modeloDatos.Viaje;
 import modeloNegocio.Empresa;
 import util.Constantes;
 import util.FalsoOptionPanel;
@@ -76,9 +82,43 @@ public class Test_Gui_PanelAdmin_GestionarPedido {
 		if (ventana != null) {
 			ventana.dispose();
 		}
-		
 	}
+
+	private Chofer crearChoferEmpresa(Chofer chofer) {
+		HashMap<String, Chofer> mapaChoferes = new HashMap<>();
+		mapaChoferes.put(chofer.getDni(), chofer);
+		empresa.setChoferes(mapaChoferes);
+		empresa.getChoferesDesocupados().add(chofer);
+		return chofer;
+	}
+
+	private Viaje crearViajeEmpresa(Pedido pedido, Vehiculo vehiculo, Chofer chofer) {
+		Viaje viaje = new Viaje(pedido, chofer, vehiculo);
+
+		HashMap<Cliente, Viaje> mapaViajesIniciados = new HashMap<>();
+		mapaViajesIniciados.put(pedido.getCliente(), viaje);
+		empresa.setViajesIniciados(mapaViajesIniciados);
+		return viaje;
+
+	}
+
+	private Pedido crearPedidoEmpresa(Pedido pedido) {
+
+		HashMap<Cliente, Pedido> mapaPedidos = new HashMap<>();
+		mapaPedidos.put(pedido.getCliente(), pedido);
+		empresa.setPedidos(mapaPedidos);
+		return pedido;
+	}
+
+	private Vehiculo crearVehiculoEmpresa(Vehiculo vehiculo) {
+		HashMap<String, Vehiculo> mapaVehiculos = new HashMap<>();
+		mapaVehiculos.put(vehiculo.getPatente(), vehiculo);
+		empresa.setVehiculos(mapaVehiculos);
+		empresa.getVehiculosDesocupados().add(vehiculo);
+		return vehiculo;
+
+	}
+
+
 	
-
-
 }
