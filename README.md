@@ -1,4 +1,4 @@
-# Trabajo de Pruebas de Caja Negra – "Subí que te llevo" - Grupo 6
+# Trabajo de Pruebas de Caja Negra – "Subí que te llevo" - Grupo 5
 
 Este repositorio forma parte de un trabajo práctico de pruebas de **caja negra** realizado sobre el sistema **"Subí que te llevo"**, desarrollado en Java.  
 El objetivo general del trabajo es ejercer el rol de tester a partir de un sistema ya definido y su documentación asociada.
